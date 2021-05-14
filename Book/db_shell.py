@@ -3,6 +3,7 @@ import random
 
 # To read data
 # all_data = Book.objects.all()
+# print(all_data)
 # for book in all_data:
 #     print("-----------Details for ID Number:",book.id,"----------")
 #     print("Book name:-",book.name)
