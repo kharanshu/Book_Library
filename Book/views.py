@@ -10,9 +10,8 @@ def homepage(request):
     return render(request,template_name='home.html',context={"books":all_books})
 
 def save_book(request):
-    #print("in save book")
-    #print(request.POST)
-    book_obj = Book.objects.get(id=request.POST.get("id"))
+    print("in save book")
+    print(request.POST)
     b_name = request.POST.get("name")
     b_author = request.POST.get("auth")
     b_qty = request.POST.get("qty")
@@ -24,6 +23,8 @@ def save_book(request):
     else:
         flag = False
     if request.POST.get("id"):
+        book_obj = Book.objects.get(id=request.POST.get("id"))
+
         book_obj.name = b_name
         book_obj.author = b_author
         book_obj.qty = b_qty
